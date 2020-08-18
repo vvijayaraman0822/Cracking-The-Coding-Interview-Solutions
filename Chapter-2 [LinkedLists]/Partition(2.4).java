@@ -15,7 +15,7 @@ Output:
 
 */
 
-public void partition(int partition) {
+public void partition(Node head, int partition) {
   Node smallNode = new Node(0); // at the end, this will be at the end of small LinkedList
   Node startSmallNode = smallNode; // this will be at the beginning of small LinkedList
   Node bigNode = new Node(0); // this will be at the end of big LinkedList
