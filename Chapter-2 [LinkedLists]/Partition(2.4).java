@@ -36,6 +36,5 @@ public void partition(Node head, int partition) {
           }
          bigNode.next = null;
          smallNode.next = startBigNode.next;
-         head = startSmallNode.next;
-           
+         head = startSmallNode.next;       
         }
