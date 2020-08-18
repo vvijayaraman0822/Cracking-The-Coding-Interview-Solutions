@@ -31,10 +31,10 @@ public void partition(Node head, int partition) {
      /* If node is smaller then partition, Insert to bigNode */
             bigNode.next = current;
             bigNode = bigNode.next;
-			 }
+		}
         current = current.next;
           }
          bigNode.next = null;
          smallNode.next = startBigNode.next;
          head = startSmallNode.next;       
-        }
+      }
