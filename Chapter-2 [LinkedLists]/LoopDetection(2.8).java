@@ -14,7 +14,7 @@ of the loop (if one exists)
           if(!nodeSet.contains(current)) {
               nodeSet.add(current);
           } else {
-              return ListNode;
+              return current;
           }
             current = current.next;
         }
