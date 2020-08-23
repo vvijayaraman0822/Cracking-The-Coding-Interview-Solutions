@@ -7,7 +7,7 @@ of the loop (if one exists)
 
 // Using a Set. O(n) - Time & Space complexity
 
-    public ListNode hasCycle(ListNode head) {
+    public ListNode detectCycle(ListNode head) {
         Set<ListNode> nodeSet = new HashSet<>();
         ListNode current = head;
         while (current != null) {
@@ -24,21 +24,29 @@ of the loop (if one exists)
 
 // Without Using any DS. O(n) - Time complexity & O(1) - Space Complexity
 
-    public ListNode hasCycle(ListNode head) {
+    public ListNode detectCycle(ListNode head) {
         if (head == null || head.next == null) {
-            return false;
+           return null; 
         }
-        ListNode slow = head;
-        ListNode fast = head.next;
         
-        while(slow != fast) {
-            if (fast == null || fast.next == null) {
+        ListNode slowPointer = head;
+        ListNode fastPointer = head.next;
+        
+        while(slowPointer != fastPointer) {
+            if (slowPointer == null || fastPointer == null || fastPointer.next == null) {
                 return null;
             }
-            slow = slow.next;
-            fast = fast.next.next;
+            slowPointer = slowPointer.next;
+            fastPointer = fastPointer.next.next;
         }
         
-        return slow;
+        // Slow and Fast Pointer will eventually meet 
+        slowPointer = head;
+        while (slowPointer != fastPointer.next) {
+            slowPointer = slowPointer.next;
+            fastPointer = fastPointer.next;
+        }
+        
+        return slowPointer;
     }
 }
