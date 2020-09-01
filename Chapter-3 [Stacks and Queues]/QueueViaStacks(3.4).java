@@ -25,8 +25,8 @@ class MyQueue {
     /** Removes the element from in front of queue and returns that element. */
     public int pop() {
         if (s2.isEmpty()) {
-				while(!s1.isEmpty()) {
-				s2.push(s1.pop());
+		while(!s1.isEmpty()) {
+		s2.push(s1.pop());
             }
         }
          
